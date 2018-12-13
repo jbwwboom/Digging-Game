@@ -271,10 +271,12 @@ GameObject:
   - component: {fileID: 920846921}
   - component: {fileID: 920846919}
   - component: {fileID: 920846918}
+  - component: {fileID: 920846915}
   - component: {fileID: 920846917}
   - component: {fileID: 920846916}
   - component: {fileID: 920846922}
-  - component: {fileID: 920846915}
+  - component: {fileID: 920846920}
+  - component: {fileID: 920846923}
   m_Layer: 0
   m_Name: 2DCharacter
   m_TagString: Player
@@ -306,7 +308,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.68}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!114 &920846916
 MonoBehaviour:
@@ -376,6 +378,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.45}
   serializedVersion: 2
   m_Radius: 0.16
+--- !u!114 &920846920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 920846914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ba44dd0cbb440498d2334e433cd534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRange: 1.5
 --- !u!212 &920846921
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -434,6 +448,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d5e12198dd7ee4588d428f3d3c101a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &920846923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 920846914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4854e96207d54ce47804b382c9af825d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 0
 --- !u!4 &1862723218
 Transform:
   m_ObjectHideFlags: 0
@@ -443,7 +469,7 @@ Transform:
   m_GameObject: {fileID: 920846914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12, y: 2, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 347150742}
   - {fileID: 2082196855}

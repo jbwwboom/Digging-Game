@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212482856082172012}
   - component: {fileID: 50994085714760768}
   - component: {fileID: 61006326283848528}
+  - component: {fileID: 114374879560519724}
   m_Layer: 0
   m_Name: Gold
   m_TagString: Pickups
@@ -87,6 +88,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114374879560519724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471858737084208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c479d11551f9a46b7f02f20e9a32e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212482856082172012
 SpriteRenderer:
   m_ObjectHideFlags: 1
