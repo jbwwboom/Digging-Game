@@ -410,6 +410,7 @@ MonoBehaviour:
   goldTile: {fileID: 1471858737084208, guid: 4922fb8eddae6da49a11340c65912158, type: 2}
   outerTerrainTile: {fileID: 1173206717924204, guid: bcb124ab1d4ecd34489365baac64e7de,
     type: 2}
+  exitTile: {fileID: 1514251836849636, guid: 4c3cbb63d4010cc40a39fea7939bf9cc, type: 2}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -513,7 +514,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 920846914}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389e09666e001e140a0fdd35fe22b8aa, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -528,7 +529,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!114 &920846916
 MonoBehaviour:
@@ -591,7 +592,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 920846914}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389e09666e001e140a0fdd35fe22b8aa, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
