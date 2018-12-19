@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInformation : MonoBehaviour {
 
@@ -40,6 +41,7 @@ public class PlayerInformation : MonoBehaviour {
     private bool alive;
     private GameObject player;
     private Equipment currentTool;
+    [SerializeField] private Text scoreText;
 
 
 	// Use this for initialization
@@ -48,12 +50,18 @@ public class PlayerInformation : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         gold = 0;   //TODO: maybe take gold on adventure
         currentTool = new Equipment(1, 1); //get Equipment 
+        UpdateScoreText();
 	}
 	
     public void UpdateScore(int score)
     {
         gold += score;
-        print(gold);
+        UpdateScoreText();
+    }
+
+    private void UpdateScoreText()
+    {
+        scoreText.text = "Score : " + gold;
     }
 
     private void CheckPlayerState()

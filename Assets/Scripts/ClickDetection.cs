@@ -48,8 +48,7 @@ public class ClickDetection : MonoBehaviour {
                     {
                         case "Pickups":
                             GoldInformation goldInformation = currentHit.gameObject.GetComponent<GoldInformation>();
-                            playerInformation.UpdateScore(goldInformation.IsHit(playerInformation.GetToolLevel(), playerInformation.GetToolStrength(), currentHit));//@TODO: this returns a score (save score)
-                            //score++;
+                            playerInformation.UpdateScore(goldInformation.IsHit(playerInformation.GetToolLevel(), playerInformation.GetToolStrength(), currentHit));
                             break;
                         case "Terrain":
                             TerrainInformation terrainInformation = currentHit.gameObject.GetComponent<TerrainInformation>();
