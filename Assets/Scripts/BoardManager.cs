@@ -25,6 +25,7 @@ public class BoardManager : MonoBehaviour {
     public GameObject terrainTile;
     public GameObject goldTile;
     public GameObject outerTerrainTile;
+    public GameObject exitTile;
 
     private Transform boardHolder;
     private List<Vector3> gridPositions = new List<Vector3>();
@@ -47,6 +48,7 @@ public class BoardManager : MonoBehaviour {
         boardHolder = new GameObject("Board").transform;
         int totalGrid = rows * columns;
         int objectCount = Random.Range(goldCount.minimum, goldCount.maximum + 1);
+        int exitPosition = Random.Range(1, rows - 1);
 
         for (int x = -1; x < columns + 1; x++)
         {
@@ -61,6 +63,8 @@ public class BoardManager : MonoBehaviour {
                 }else if (objectCount > randomGrid)
                 {
                     instantiate = goldTile; 
+                }else if(y == -rows + 1 && x == exitPosition){
+                    instantiate = exitTile;
                 }
                 GameObject instance = Instantiate(instantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
 

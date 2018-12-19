@@ -322,6 +322,7 @@
     <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\ClickDetection.cs" />
+    <Compile Include="Assets\Scripts\ExitLevel.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\GoldInformation.cs" />
     <Compile Include="Assets\Scripts\Platformer2DUserControl.cs" />
