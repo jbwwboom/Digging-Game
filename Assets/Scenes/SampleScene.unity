@@ -308,7 +308,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!114 &920846916
 MonoBehaviour:
@@ -371,7 +371,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 920846914}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389e09666e001e140a0fdd35fe22b8aa, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -443,11 +443,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 920846914}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8d5e12198dd7ee4588d428f3d3c101a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  jump: 0
 --- !u!114 &920846923
 MonoBehaviour:
   m_ObjectHideFlags: 0
