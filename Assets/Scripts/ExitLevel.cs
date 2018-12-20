@@ -4,22 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ExitLevel : MonoBehaviour {
+    private GameController gameController; 
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Awake () {
+        gameController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("SaveScene");
+            gameController.SwapScene(null);
         }
         
     }

@@ -6,6 +6,7 @@ public class GoldInformation : MonoBehaviour {
     [SerializeField] private int hitPoints; //show damage
     [SerializeField] private int level; //show color
     [SerializeField] private int score;
+    public Sprite dmgSprite1;
     // Use this for initialization
     void Awake()
     {
@@ -30,6 +31,8 @@ public class GoldInformation : MonoBehaviour {
             thisObject.SetActive(false);
             return score;
         }
+        GameObject childObject = thisObject.transform.GetChild(0).gameObject;
+        childObject.GetComponent<SpriteRenderer>().sprite = dmgSprite1;
         return 0;
     }
 

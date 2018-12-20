@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerInformation : MonoBehaviour {
 
@@ -50,7 +51,10 @@ public class PlayerInformation : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         gold = 0;   //TODO: maybe take gold on adventure
         currentTool = new Equipment(1, 1); //get Equipment 
-        UpdateScoreText();
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+            UpdateScoreText();
+        else
+            scoreText.text = "Score: " + Data.GetPoints();
 	}
 	
     public void UpdateScore(int score)
@@ -90,8 +94,14 @@ public class PlayerInformation : MonoBehaviour {
         return currentTool.getLevel();
     }
 
+    public int GetScore()
+    {
+        return gold;
+    }
+
     public void UpdateTool(Equipment equipment)
     {
         currentTool = equipment;
     }
+
 }
