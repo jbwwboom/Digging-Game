@@ -19,96 +19,106 @@ public class BoardManager : MonoBehaviour {
         }
     }
 
-    public int columns = 25;
+    public int columns = 50;
     public int rows = 25;
-    public Count goldCount = new Count(20, 50);
+    private int oldRows = 0;
+    private int addRows;
+    public Count goldCount = new Count(100, 120);
     public GameObject terrainTile;
     public GameObject goldTile;
     public GameObject outerTerrainTile;
-    public GameObject exitTile;
+    private GameObject player;
 
     private Transform boardHolder;
-    private List<Vector3> gridPositions = new List<Vector3>();
-
-    void InitialiseList()
-    {
-        gridPositions.Clear();
-
-        for(int x = 1; x < columns - 1; x++)
-        {
-            for(int y = -1; y > -rows + 1; y--)
-            {   
-                gridPositions.Add(new Vector3(x, y, 0f));
-            }
-        }
-    }
 
     void BoardSetup()
     {
         boardHolder = new GameObject("Board").transform;
         int totalGrid = rows * columns;
         int objectCount = Random.Range(goldCount.minimum, goldCount.maximum + 1);
-        int exitPosition = Random.Range(1, rows - 1);
 
-        for (int x = -1; x < columns + 1; x++)
+        for (int x = 0; x < columns + 1; x++)
         {
-            for (int y = 0; y > -rows - 1; y--)
+            for (int y = -oldRows; y > -rows - 1; y--)
             {
                 GameObject instantiate = terrainTile;
 
                 int randomGrid = Random.Range(0, totalGrid);
-                if (x == -1 || x == columns || y == -rows)
+                if (objectCount > randomGrid)
                 {
-                    instantiate = outerTerrainTile;
-                }else if (objectCount > randomGrid)
-                {
-                    instantiate = goldTile; 
-                }else if(y == -rows + 1 && x == exitPosition){
-                    instantiate = exitTile;
+                    instantiate = goldTile;
                 }
                 GameObject instance = Instantiate(instantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
 
                 instance.transform.SetParent(boardHolder);
             }
         }
-    }
 
-    /*Vector3 RandomPosition()
-    {
-        int randomIndex = Random.Range(0, gridPositions.Count);
-        Vector3 randomPosition = gridPositions[randomIndex];
-        gridPositions.RemoveAt(randomIndex);
-        return randomPosition;
-    }
-
-    void LayoutObjectAtRandom(GameObject tileArray, int minimum, int maximum)
-    {
-        int objectCount = Random.Range(minimum, maximum + 1);
-
-        for(int i = 0; i < objectCount; i++)
+        for (int y = -oldRows; y > -rows - 1; y--)
         {
-            Vector3 randomPosition = RandomPosition();
-            GameObject goldObject = goldTile;
-            Instantiate(goldObject, randomPosition, Quaternion.identity);
+            int randomBorder = Random.Range(1, 4);
+            for (int i = 1; i <= 3; i++)
+            {
+                GameObject border;
+                if (i >= randomBorder)
+                {
+                    border = outerTerrainTile;
+                }
+                else
+                {
+                    border = terrainTile;
+                }
+
+                GameObject borderObject = Instantiate(border, new Vector3(0 - i, y, 0f), Quaternion.identity) as GameObject;
+                GameObject borderObject2 = Instantiate(border, new Vector3(columns + i, y, 0f), Quaternion.identity) as GameObject;
+                borderObject.transform.SetParent(boardHolder);
+                borderObject2.transform.SetParent(boardHolder);
+            }
         }
-    }*/
+    }
+
+    public void BorderSetup()
+    {   
+        for(int bY = 1; bY <= 10; bY++)
+        {
+            for (int i = 1; i <= 3; i++)
+            {
+                GameObject border = outerTerrainTile;
+
+                GameObject borderObject = Instantiate(border, new Vector3(0 - i, bY, 0f), Quaternion.identity) as GameObject;
+                GameObject borderObject2 = Instantiate(border, new Vector3(columns + i, bY, 0f), Quaternion.identity) as GameObject;
+                borderObject.transform.SetParent(boardHolder);
+                borderObject2.transform.SetParent(boardHolder);
+            }
+        }
+    }
 
     public void SetupScene()
     {
         BoardSetup();
-        InitialiseList();
-        //LayoutObjectAtRandom(goldTile, goldCount.minimum, goldCount.maximum);
-        //Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);
+        BorderSetup();
+        //InitialiseList();
     }
 
 
     // Use this for initialization
     void Start () {
         SetupScene();
-	}
+        player = GameObject.FindGameObjectWithTag("Player");
+        addRows = rows;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
+	    if(-rows + addRows / 5 > player.transform.position.y)
+        {
+            int goldIncrease = addRows / 5 * 2;
+            goldCount.minimum += goldIncrease;
+            goldCount.maximum += goldIncrease * 2;
+            oldRows = rows;
+            rows += addRows;
+            BoardSetup();
+        }
 	}
 }

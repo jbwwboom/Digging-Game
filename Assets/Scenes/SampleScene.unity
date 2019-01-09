@@ -181,17 +181,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80279d139644405468b9e782ef954a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 25
+  columns: 50
   rows: 25
   goldCount:
-    minimum: 20
-    maximum: 50
+    minimum: 50
+    maximum: 100
   terrainTile: {fileID: 1794532315646712, guid: c5bfa16df376cc04b8e19bcd4d8247c2,
     type: 2}
   goldTile: {fileID: 1471858737084208, guid: 4922fb8eddae6da49a11340c65912158, type: 2}
   outerTerrainTile: {fileID: 1173206717924204, guid: bcb124ab1d4ecd34489365baac64e7de,
     type: 2}
-  exitTile: {fileID: 1514251836849636, guid: 4c3cbb63d4010cc40a39fea7939bf9cc, type: 2}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -239,7 +238,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 0, z: -10}
+  m_LocalPosition: {x: 25, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -701,7 +700,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 920846914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 2, z: 0}
+  m_LocalPosition: {x: 25, y: 2, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 347150742}
