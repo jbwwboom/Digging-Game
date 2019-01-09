@@ -10,9 +10,10 @@ public class GoldInformation : MonoBehaviour {
     // Use this for initialization
     void Awake()
     {
-        hitPoints = 2;
-        level = 0;
-        score = Random.Range(1, 5);
+        int multiplier = (int)GameObject.FindGameObjectWithTag("Player").transform.position.y / -100;
+        hitPoints = 2 + multiplier;
+        level = 0 + multiplier;
+        score = Random.Range(1 + multiplier, 3 + multiplier);
     }
 
     public int IsHit(int toolLv, int toolStr, GameObject thisObject)
