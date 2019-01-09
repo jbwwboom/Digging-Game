@@ -15,7 +15,7 @@ public class ClickDetection : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
 
