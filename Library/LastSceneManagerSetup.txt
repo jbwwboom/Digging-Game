@@ -1,4 +1,7 @@
 sceneSetups:
-- path: Assets/Scenes/SaveScene.unity
+- path: Assets/Scenes/SampleScene.unity
   isLoaded: 1
   isActive: 1
+- path: Assets/Scenes/SaveScene.unity
+  isLoaded: 0
+  isActive: 0

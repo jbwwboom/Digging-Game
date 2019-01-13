@@ -8,6 +8,7 @@ TagManager:
   - Impassable
   - Pickups
   - Shop
+  - Board
   layers:
   - Default
   - TransparentFX

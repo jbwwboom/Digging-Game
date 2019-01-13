@@ -33,7 +33,7 @@ public class BoardManager : MonoBehaviour {
 
     void BoardSetup()
     {
-        boardHolder = new GameObject("Board").transform;
+        //boardHolder = new GameObject("Board").transform;
         int totalGrid = rows * columns;
         int objectCount = Random.Range(goldCount.minimum, goldCount.maximum + 1);
 
@@ -95,14 +95,27 @@ public class BoardManager : MonoBehaviour {
 
     public void SetupScene()
     {
-        BoardSetup();
-        BorderSetup();
+        if(GameObject.Find("Board") == null)
+        {
+            boardHolder = new GameObject("Board").transform;
+            boardHolder.tag = "Board";
+            BoardSetup();
+            BorderSetup();
+        }
+        else
+        {
+            boardHolder = GameObject.Find("Board").GetComponent<Transform>();
+            Vector3 temp = new Vector3(-100, 0, 0);
+            boardHolder.transform.position += temp;
+            boardHolder.tag = "Board";
+        }
+        
         //InitialiseList();
     }
 
 
     // Use this for initialization
-    void Start () {
+    void Start () {  
         SetupScene();
         player = GameObject.FindGameObjectWithTag("Player");
         addRows = rows;
