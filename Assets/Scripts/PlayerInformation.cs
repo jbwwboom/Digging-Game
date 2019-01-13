@@ -51,10 +51,7 @@ public class PlayerInformation : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         gold = 0;   //TODO: maybe take gold on adventure
         currentTool = new Equipment(1, 1); //get Equipment 
-        if (SceneManager.GetActiveScene().name == "SampleScene")
-            UpdateScoreText();
-        else
-            scoreText.text = "Score: " + Data.GetPoints();
+        scoreText.text = "Score: " + Data.GetPoints();
 	}
 	
     public void UpdateScore(int score)
@@ -63,9 +60,9 @@ public class PlayerInformation : MonoBehaviour {
         UpdateScoreText();
     }
 
-    private void UpdateScoreText()
+    public void UpdateScoreText()
     {
-        scoreText.text = "Score : " + gold;
+        scoreText.text = "Score: " + gold;
     }
 
     private void CheckPlayerState()

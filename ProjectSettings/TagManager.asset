@@ -9,6 +9,7 @@ TagManager:
   - Pickups
   - Shop
   - Board
+  - Amethyst
   layers:
   - Default
   - TransparentFX

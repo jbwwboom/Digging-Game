@@ -51,6 +51,10 @@ public class ClickDetection : MonoBehaviour {
                             GoldInformation goldInformation = currentHit.gameObject.GetComponent<GoldInformation>();
                             playerInformation.UpdateScore(goldInformation.IsHit(playerInformation.GetToolLevel(), playerInformation.GetToolStrength(), currentHit));
                             break;
+                        case "Amethyst":
+                            AmethystInformation amethystInformation = currentHit.gameObject.GetComponent<AmethystInformation>();
+                            playerInformation.UpdateScore(amethystInformation.IsHit(playerInformation.GetToolLevel(), playerInformation.GetToolStrength(), currentHit));
+                            break;
                         case "Terrain":
                             TerrainInformation terrainInformation = currentHit.gameObject.GetComponent<TerrainInformation>();
                             terrainInformation.IsHit(playerInformation.GetToolLevel(), playerInformation.GetToolStrength(), currentHit);

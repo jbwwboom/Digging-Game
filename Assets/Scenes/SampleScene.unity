@@ -232,10 +232,15 @@ MonoBehaviour:
   goldCount:
     minimum: 50
     maximum: 100
+  amethystCount:
+    minimum: 0
+    maximum: 0
   terrainTile: {fileID: 1794532315646712, guid: c5bfa16df376cc04b8e19bcd4d8247c2,
     type: 2}
   goldTile: {fileID: 1471858737084208, guid: 4922fb8eddae6da49a11340c65912158, type: 2}
   outerTerrainTile: {fileID: 1173206717924204, guid: bcb124ab1d4ecd34489365baac64e7de,
+    type: 2}
+  amethystTile: {fileID: 1426192660734696, guid: 3eb9e2c214bd0b7419598045821bb25c,
     type: 2}
 --- !u!20 &519420031
 Camera:

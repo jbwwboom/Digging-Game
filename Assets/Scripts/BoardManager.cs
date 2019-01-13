@@ -24,9 +24,11 @@ public class BoardManager : MonoBehaviour {
     private int oldRows = 0;
     private int addRows;
     public Count goldCount = new Count(100, 120);
+    public Count amethystCount = new Count(0, 0);
     public GameObject terrainTile;
     public GameObject goldTile;
     public GameObject outerTerrainTile;
+    public GameObject amethystTile;
     private GameObject player;
 
     private Transform boardHolder;
@@ -35,7 +37,8 @@ public class BoardManager : MonoBehaviour {
     {
         //boardHolder = new GameObject("Board").transform;
         int totalGrid = rows * columns;
-        int objectCount = Random.Range(goldCount.minimum, goldCount.maximum + 1);
+        int goldAmount = Random.Range(goldCount.minimum, goldCount.maximum + 1);
+        int amethystAmount = Random.Range(amethystCount.minimum, amethystCount.maximum + 1);
 
         for (int x = 0; x < columns + 1; x++)
         {
@@ -44,8 +47,10 @@ public class BoardManager : MonoBehaviour {
                 GameObject instantiate = terrainTile;
 
                 int randomGrid = Random.Range(0, totalGrid);
-                if (objectCount > randomGrid)
+                if (amethystAmount > randomGrid)
                 {
+                    instantiate = amethystTile;
+                } else if (goldAmount > randomGrid){
                     instantiate = goldTile;
                 }
                 GameObject instance = Instantiate(instantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
@@ -129,6 +134,8 @@ public class BoardManager : MonoBehaviour {
             int goldIncrease = addRows / 5 * 2;
             goldCount.minimum += goldIncrease;
             goldCount.maximum += goldIncrease * 2;
+            amethystCount.minimum = goldIncrease / 2;
+            amethystCount.maximum = goldIncrease;
             oldRows = rows + 1;
             rows += addRows;
             BoardSetup();
