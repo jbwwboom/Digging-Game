@@ -44,6 +44,7 @@ public class ClickDetection : MonoBehaviour {
                 
                 if (rangeID <= playerRange)
                 {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("PlayerDig");
                     switch(currentHit.tag)
                     {
                         case "Pickups":

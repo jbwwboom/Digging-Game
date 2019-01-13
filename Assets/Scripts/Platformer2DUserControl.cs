@@ -31,6 +31,14 @@ namespace UnityStandardAssets._2D
             // Read the inputs.
             bool crouch = Input.GetKey(KeyCode.LeftControl);
             float h = Input.GetAxis("Horizontal");
+            if(h!=0)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("PlayerWalk");
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("PlayerStopWalk");
+            }
             // Pass all parameters to the character control script.
             m_Character.Move(h, crouch, m_Jump);
             m_Jump = false;
