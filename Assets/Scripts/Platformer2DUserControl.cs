@@ -30,8 +30,30 @@ namespace UnityStandardAssets._2D
         {
             // Read the inputs.
             bool crouch = Input.GetKey(KeyCode.LeftControl);
-            float h = Input.GetAxis("Horizontal");
-            if(h!=0)
+
+            //PC
+            //float h = Input.GetAxis("Horizontal");
+
+            //MOBILE
+            float h = 0.0f;
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+                Vector3 vec = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 0));
+                float diff = Math.Abs(player.transform.position.y - vec.y);
+
+                if (diff <= 0.5)
+                {
+                    h = (touch.position.x > (Screen.width / 2)) ? 1 : -1;
+                    h /= 3;
+                }
+                 
+            }
+
+
+            if (h!=0)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("PlayerWalk");
             }

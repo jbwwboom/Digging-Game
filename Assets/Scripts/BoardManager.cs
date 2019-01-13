@@ -21,6 +21,7 @@ public class BoardManager : MonoBehaviour {
 
     public int columns = 50;
     public int rows = 25;
+    public static int rowAmount = 1;
     private int oldRows = 0;
     private int addRows;
     public Count goldCount = new Count(100, 120);
@@ -113,6 +114,7 @@ public class BoardManager : MonoBehaviour {
             Vector3 temp = new Vector3(-100, 0, 0);
             boardHolder.transform.position += temp;
             boardHolder.tag = "Board";
+            rows *= rowAmount;
         }
         
         //InitialiseList();
@@ -138,6 +140,7 @@ public class BoardManager : MonoBehaviour {
             amethystCount.maximum = goldIncrease;
             oldRows = rows + 1;
             rows += addRows;
+            rowAmount++;
             BoardSetup();
         }
 	}
