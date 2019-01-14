@@ -44,25 +44,35 @@ public class ClickDetection : MonoBehaviour {
                 
                 if (rangeID <= playerRange)
                 {
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("PlayerDig");
-                    switch(currentHit.tag)
+                    if(Data.GetHitpoints() > 0)
                     {
-                        case "Pickups":
-                            GoldInformation goldInformation = currentHit.gameObject.GetComponent<GoldInformation>();
-                            playerInformation.UpdateScore(goldInformation.IsHit(playerInformation.GetToolLevel(), playerInformation.GetToolStrength(), currentHit));
-                            break;
-                        case "Amethyst":
-                            AmethystInformation amethystInformation = currentHit.gameObject.GetComponent<AmethystInformation>();
-                            playerInformation.UpdateScore(amethystInformation.IsHit(playerInformation.GetToolLevel(), playerInformation.GetToolStrength(), currentHit));
-                            break;
-                        case "Terrain":
-                            TerrainInformation terrainInformation = currentHit.gameObject.GetComponent<TerrainInformation>();
-                            terrainInformation.IsHit(playerInformation.GetToolLevel(), playerInformation.GetToolStrength(), currentHit);
-                            break;
-                        default:
-                            break;
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetTrigger("PlayerDig");
+                        switch (currentHit.tag)
+                        {
+                            case "Pickups":
+                                GoldInformation goldInformation = currentHit.gameObject.GetComponent<GoldInformation>();
+                                Data.LoseHitpoints();
+                                playerInformation.UpdateScore(goldInformation.IsHit(playerInformation.GetToolLevel(), playerInformation.GetToolStrength(), currentHit));
+                                break;
+                            case "Amethyst":
+                                AmethystInformation amethystInformation = currentHit.gameObject.GetComponent<AmethystInformation>();
+                                Data.LoseHitpoints();
+                                playerInformation.UpdateScore(amethystInformation.IsHit(playerInformation.GetToolLevel(), playerInformation.GetToolStrength(), currentHit));
+                                break;
+                            case "Terrain":
+                                TerrainInformation terrainInformation = currentHit.gameObject.GetComponent<TerrainInformation>();
+                                Data.LoseHitpoints();
+                                playerInformation.UpdateScore(0);
+                                terrainInformation.IsHit(playerInformation.GetToolLevel(), playerInformation.GetToolStrength(), currentHit);
+                                break;
+                            default:
+                                break;
+                        }
                     }
-                    
+                    else
+                    {
+                        Data.Restart();
+                    }      
                 }
             }
         }

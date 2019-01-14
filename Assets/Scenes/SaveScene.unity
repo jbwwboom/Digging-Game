@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 14706566}
   - component: {fileID: 14706565}
   m_Layer: 5
-  m_Name: ItemButton
+  m_Name: ItemButton 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 71403768}
   - component: {fileID: 71403767}
   m_Layer: 5
-  m_Name: ItemButton
+  m_Name: ItemButton 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,6 +717,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcb124ab1d4ecd34489365baac64e7de, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &103858878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114993377904015502, guid: 04046cb0296d06d4b85d8b14c0d4bc66,
+    type: 2}
+  m_PrefabInternal: {fileID: 519258665}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &117820589
 Prefab:
   m_ObjectHideFlags: 0
@@ -1071,6 +1077,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb05feb9693fb84bb06b2fb0e52891a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &179207484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114993377904015502, guid: 04046cb0296d06d4b85d8b14c0d4bc66,
+    type: 2}
+  m_PrefabInternal: {fileID: 243409066}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &182222898
 Prefab:
   m_ObjectHideFlags: 0
@@ -1363,6 +1375,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114431979433540318, guid: 04046cb0296d06d4b85d8b14c0d4bc66,
+        type: 2}
+      propertyPath: m_Text
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04046cb0296d06d4b85d8b14c0d4bc66, type: 2}
@@ -2163,7 +2180,11 @@ Prefab:
     - target: {fileID: 114431979433540318, guid: 04046cb0296d06d4b85d8b14c0d4bc66,
         type: 2}
       propertyPath: m_Text
-      value: 5000g
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011357728380898, guid: 04046cb0296d06d4b85d8b14c0d4bc66, type: 2}
+      propertyPath: m_Name
+      value: ItemButton 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04046cb0296d06d4b85d8b14c0d4bc66, type: 2}
@@ -2283,7 +2304,7 @@ Prefab:
     - target: {fileID: 114200364413677522, guid: 04046cb0296d06d4b85d8b14c0d4bc66,
         type: 2}
       propertyPath: m_Text
-      value: 10000g
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114200364413677522, guid: 04046cb0296d06d4b85d8b14c0d4bc66,
         type: 2}
@@ -2294,6 +2315,10 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.x
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544315407988784, guid: 04046cb0296d06d4b85d8b14c0d4bc66, type: 2}
+      propertyPath: m_Name
+      value: ItemButton 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
@@ -2619,7 +2644,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 300000g
+  m_Text: 30
 --- !u!222 &765221286
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3856,8 +3881,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -800, y: 445}
-  m_SizeDelta: {x: -1800, y: -910}
+  m_AnchoredPosition: {x: -775, y: 445}
+  m_SizeDelta: {x: -1750, y: -910}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206861178
 MonoBehaviour:
@@ -4281,7 +4306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10000g
+  m_Text: 20
 --- !u!222 &1337553067
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6588,7 +6613,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 2128187615}
+  buttons:
+  - {fileID: 179207484}
+  - {fileID: 14706565}
+  - {fileID: 71403767}
+  - {fileID: 103858878}
   panel: {fileID: 140584361}
+  cost: 1
 --- !u!1001 &2029801015
 Prefab:
   m_ObjectHideFlags: 0
@@ -6934,7 +6965,7 @@ Prefab:
     - target: {fileID: 114200364413677522, guid: 04046cb0296d06d4b85d8b14c0d4bc66,
         type: 2}
       propertyPath: m_Text
-      value: 300000g
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 224110530004200480, guid: 04046cb0296d06d4b85d8b14c0d4bc66,
         type: 2}
@@ -6945,6 +6976,10 @@ Prefab:
         type: 2}
       propertyPath: m_FontData.m_Alignment
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544315407988784, guid: 04046cb0296d06d4b85d8b14c0d4bc66, type: 2}
+      propertyPath: m_Name
+      value: ItemButton 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}

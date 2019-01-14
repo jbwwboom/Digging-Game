@@ -51,7 +51,7 @@ public class PlayerInformation : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         gold = 0;   //TODO: maybe take gold on adventure
         currentTool = new Equipment(1, 1); //get Equipment 
-        scoreText.text = "Score: " + Data.GetPoints();
+        scoreText.text = "Score: " + Data.GetPoints() + "\n Hp: " + Data.GetHitpoints();
 	}
 	
     public void UpdateScore(int score)
@@ -62,7 +62,7 @@ public class PlayerInformation : MonoBehaviour {
 
     public void UpdateScoreText()
     {
-        scoreText.text = "Score: " + gold;
+        scoreText.text = "Score: " + (Data.GetPoints() + gold) + "\n Hp: " + Data.GetHitpoints();
     }
 
     private void CheckPlayerState()

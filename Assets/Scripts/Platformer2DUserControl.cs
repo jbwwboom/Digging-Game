@@ -32,10 +32,10 @@ namespace UnityStandardAssets._2D
             bool crouch = Input.GetKey(KeyCode.LeftControl);
 
             //PC
-            //float h = Input.GetAxis("Horizontal");
+            float h = Input.GetAxis("Horizontal");
 
             //MOBILE
-            float h = 0.0f;
+            /*float h = 0.0f;
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
@@ -50,7 +50,7 @@ namespace UnityStandardAssets._2D
                     h /= 3;
                 }
                  
-            }
+            }*/
 
 
             if (h!=0)
