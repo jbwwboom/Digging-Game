@@ -136,8 +136,8 @@ public class BoardManager : MonoBehaviour {
             int goldIncrease = addRows / 5 * 2;
             goldCount.minimum += goldIncrease;
             goldCount.maximum += goldIncrease * 2;
-            amethystCount.minimum = goldIncrease / 2;
-            amethystCount.maximum = goldIncrease;
+            amethystCount.minimum += goldIncrease / 2;
+            amethystCount.maximum += goldIncrease;
             oldRows = rows + 1;
             rows += addRows;
             rowAmount++;
